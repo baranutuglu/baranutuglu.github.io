@@ -2,82 +2,55 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>İlgi Alanlarım | Ziya Baran Utuğlu</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; background: linear-gradient(135deg, #667eea, #764ba2); color: #333; }
-        header { background: rgba(0,0,0,0.8); color: white; padding: 2rem; text-align: center; }
-        header h1 { font-size: 2.5rem; }
-        nav { background: rgba(0,0,0,0.9); position: sticky; top: 0; }
-        nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; }
-        nav a { display: block; color: white; padding: 1rem 1.5rem; text-decoration: none; transition: all 0.3s; }
-        nav a:hover { background: rgba(102,126,234,0.8); }
-        main { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
-        section { background: white; margin: 1.5rem 0; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
-        h2 { color: #2c3e50; border-bottom: 2px solid #667eea; padding-bottom: 0.5rem; }
-        h3 { color: #764ba2; }
-        a { color: #667eea; text-decoration: none; }
-        a:hover { color: #764ba2; }
-        strong { color: #e74c3c; }
-        em { color: #764ba2; }
-        blockquote { border-left: 4px solid #667eea; padding-left: 1.5rem; margin: 1.5rem 0; font-style: italic; color: #555; background: #f5f5f5; padding: 1rem; border-radius: 5px; }
-        dl { margin-left: 1rem; }
-        dt { font-weight: 600; color: #667eea; margin-top: 1rem; }
-        dd { margin-left: 2rem; margin-bottom: 0.5rem; color: #555; }
-        footer { background: rgba(0,0,0,0.8); color: white; padding: 2rem; text-align: center; margin-top: 3rem; }
-        @media (max-width: 768px) { header h1 { font-size: 1.8rem; } nav ul { flex-direction: column; } }
-    </style>
+    <title>Hizmetler | CSS Temel Ödevi</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <header>
-        <h1>İlgi Alanlarım</h1>
-        <p>Teknoloji ve kişisel ilgi alanlarım</p>
-    </header>
-
-    <nav>
+    <!-- Yatay Menü -->
+    <nav class="navbar">
         <ul>
             <li><a href="index.html">Ana Sayfa</a></li>
-            <li><a href="about.html">Hakkımda</a></li>
-            <li><a href="interests.html">İlgi Alanlarım</a></li>
+            <li><a href="about.html">Hakkında</a></li>
+            <li><a href="interests.html">Hizmetler</a></li>
             <li><a href="contact.html">İletişim</a></li>
         </ul>
     </nav>
 
-    <main>
-        <section>
-            <h2>İlgi Alanlarım</h2>
-            <ul>
-                <li>Müzik</li>
-                <li>Spor</li>
-                <li>Teknoloji</li>
-            </ul>
-        </section>
+    <!-- Header Alanı -->
+    <header class="page-header">
+        <h1>İlgi Alanlarım / Hizmetler</h1>
+        <p>Teknoloji ve kişisel ilgi alanlarım hakkında bilgiler</p>
+    </header>
 
-        <section>
-            <h2>Günlük Çalışma Rutinim</h2>
-            <ol>
-                <li>Ders materyallerini gözden geçirmek</li>
-                <li>Kodlama pratiği yapmak</li>
-                <li>Yeni teknolojiler araştırmak</li>
-            </ol>
-        </section>
+    <!-- Ana İçerik -->
+    <main class="main-container">
+        <div class="content-wrapper">
+            <div class="content">
+                <h2>İlgi Alanlarım</h2>
+                <p><strong>Teknoloji:</strong> Web tasarımı, frontend geliştirme ve kullanıcı deneyimi üzerine çalışıyorum. HTML5, CSS3 ve JavaScript teknolojilerini derinlemesine öğrenmeyi hedeflemekteyim.</p>
+                <p><strong>Müzik ve Spor:</strong> Yüksek performanslı çalışabilmek için spor yapıyorum ve müzik dinliyorum. Bu aktiviteler yaratıcılığı ve odaklanmayı artırıyor.</p>
+            </div>
 
-        <section>
-            <h2>Web Teknolojileri Sözlüğü</h2>
-            <dl>
-                <dt>HTML</dt>
-                <dd>Web sayfalarının iskeletini oluşturan işaretleme dilidir.</dd>
-                <dt>CSS</dt>
-                <dd>Web sayfalarının görsel tasarımını düzenlemek için kullanılır.</dd>
-            </dl>
-
-            <p><a href="index.html">Ana sayfaya geri dön</a></p>
-        </section>
+            <aside class="sidebar">
+                <h2>Günlük Çalışma Rutinim</h2>
+                <p><strong>1. Ders Materyalleri:</strong> Her gün ders notlarını gözden geçirmek ve konuları pekiştirmek</p>
+                <p><strong>2. Kodlama Pratiği:</strong> En az 2 saat kodlama egzersizi yapmak ve yeni teknikler öğrenmek</p>
+                <p><strong>3. Araştırma:</strong> Web teknolojilerindeki yeni gelişmeleri takip etmek ve uygulamak</p>
+            </aside>
+        </div>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Ziya Baran Utuğlu - Web Programlama Dersi</p>
+    <!-- Butonlar -->
+    <div style="text-align: center; padding: 2rem;">
+        <a href="index.html" class="btn">Ana Sayfaya Geri Dön</a>
+        <a href="contact.html" class="btn btn-secondary">İletişime Geç</a>
+    </div>
+
+    <!-- Footer Alanı -->
+    <footer class="page-footer">
+        <p>&copy; 2026 CSS Temel Örnek. Bu sayfa basit bir HTML+CSS alıştırması olarak hazırlanmıştır.</p>
     </footer>
+
     <script src="scripts/main.js"></script>
 </body>
 </html>
