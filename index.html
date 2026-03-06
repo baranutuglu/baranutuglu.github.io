@@ -2,66 +2,50 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>Ana Sayfa | Ziya Baran Utuğlu</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; background: linear-gradient(135deg, #667eea, #764ba2); color: #333; }
-        header { background: rgba(0,0,0,0.8); color: white; padding: 2rem; text-align: center; }
-        header h1 { font-size: 2.5rem; }
-        nav { background: rgba(0,0,0,0.9); position: sticky; top: 0; }
-        nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; }
-        nav a { display: block; color: white; padding: 1rem 1.5rem; text-decoration: none; transition: all 0.3s; }
-        nav a:hover { background: rgba(102,126,234,0.8); }
-        main { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
-        section { background: white; margin: 1.5rem 0; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
-        h2 { color: #2c3e50; border-bottom: 2px solid #667eea; padding-bottom: 0.5rem; }
-        footer { background: rgba(0,0,0,0.8); color: white; padding: 2rem; text-align: center; margin-top: 3rem; }
-    </style>
+    <title>CSS Temel Ödevi</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <header>
-        <h1>Ziya Baran Utuğlu</h1>
-        <p>Bilgisayar Mühendisliği | Web Programlama Öğrencisi</p>
-    </header>
-
-    <nav>
+    <!-- Yatay Menü - ul > li > a yapısıyla -->
+    <nav class="navbar">
         <ul>
             <li><a href="index.html">Ana Sayfa</a></li>
-            <li><a href="about.html">Hakkımda</a></li>
-            <li><a href="interests.html">İlgi Alanlarım</a></li>
+            <li><a href="about.html">Hakkında</a></li>
+            <li><a href="interests.html">Hizmetler</a></li>
             <li><a href="contact.html">İletişim</a></li>
         </ul>
     </nav>
 
-    <main>
-        <section>
-            <h2>Hoş Geldiniz</h2>
-            <p>Bu web sitesi, Web Programlama dersi kapsamında hazırlanmış örnek bir kişisel tanıtım sayfasıdır.</p>
-            <p>Amaç, HTML'in temel etiketlerini ve sayfa yapısını öğrenmektir.</p>
-        </section>
+    <!-- Header Alanı -->
+    <header class="page-header">
+        <h1>CSS Temel Ödevi</h1>
+        <p>Verilen görsele benzer şekilde basit bir web sayfası oluştururken CSS'in temel özelliklerini uygulama.</p>
+    </header>
 
-        <section id="hizli-bilgiler">
-            <h2>Hızlı Bilgiler</h2>
-            <ul>
-                <li><strong>Üniversite:</strong> Marmara Üniversitesi</li>
-                <li><strong>Bölüm:</strong> Bilgisayar Mühendisliği</li>
-                <li><strong>İlgi Alanı:</strong> Web Teknolojileri</li>
-            </ul>
-        </section>
+    <!-- Ana İçerik - İki Sütunlu Yapı -->
+    <main class="main-container">
+        <div class="content-wrapper">
+            <!-- Sol Sütun - İçerik -->
+            <div class="content">
+                <h2>İçerik</h2>
+                <p>Bu alanda örnek metin bulunmaktadır. CSS öğelerini düzenleme işlemi yapılmıştır. Font boyutu, renk ve satır yüksekliği gibi özellikler uygulanmıştır. Web sayfasının temel tasarımını anlamak için bu örneği inceleyebilirsiniz.</p>
+                <p>Önceki CSS ile kutuları / alanları yan yana getirmeyi öğrendik. Şimdi CSS seçicilerini kullanarak grup ve hiyerarşik seçimler yapabiliriz. Bölümleri grup ve hiyerarşik seçiciler kullanarak stillendirebiliriz.</p>
+            </div>
 
-        <section>
-            <h2>Öğrenme Hedeflerim</h2>
-            <ol>
-                <li>HTML temellerini öğrenmek</li>
-                <li>CSS ile sayfa tasarlamak</li>
-                <li>JavaScript ile etkileşim eklemek</li>
-            </ol>
-        </section>
+            <!-- Sağ Sütun - Yan Menü / Bilgi -->
+            <aside class="sidebar">
+                <h2>Yan Menü / Bilgi</h2>
+                <p>Bu alan yan menü ve bilgi bölümü için ayrılmıştır. CSS ile geniş alanı (width), kenar farkları (margin/padding) ve kenarlık (border) özellikleri düzenlenmiştir. Metinlerin hizalaması da text-align özelliği ile yapılmıştır.</p>
+                <p>Öğrendiklerimizi başka seçiciler ve CSS özellikleriyle genişletebiliriz. Gradyan renkler, gölge efektleri ve animasyonlar eklenebilir. CSS'in gücünü kullanarak daha etkileyici tasarımlar oluşturabiliriz.</p>
+            </aside>
+        </div>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Ziya Baran Utuğlu - Web Programlama Dersi</p>
+    <!-- Footer Alanı -->
+    <footer class="page-footer">
+        <p>&copy; 2026 CSS Temel Örnek. Bu sayfa basit bir HTML+CSS alıştırması olarak hazırlanmıştır.</p>
     </footer>
+
     <script src="scripts/main.js"></script>
 </body>
 </html>
