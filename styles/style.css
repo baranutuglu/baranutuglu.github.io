@@ -162,19 +162,24 @@ body {
     padding-bottom: 0.5rem;
 }
 
-.contact-container label {
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 600;
     color: #333;
 }
 
-.contact-container input,
+.contact-container input[type="text"],
+.contact-container input[type="email"],
+.contact-container input[type="password"],
 .contact-container select,
 .contact-container textarea {
     width: 100%;
     padding: 0.75rem;
-    margin-bottom: 1.5rem;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-family: inherit;
@@ -182,7 +187,9 @@ body {
     box-sizing: border-box;
 }
 
-.contact-container input:focus,
+.contact-container input[type="text"]:focus,
+.contact-container input[type="email"]:focus,
+.contact-container input[type="password"]:focus,
 .contact-container select:focus,
 .contact-container textarea:focus {
     outline: none;
@@ -190,21 +197,88 @@ body {
     box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
 }
 
-.contact-container button {
-    width: 100%;
+/* Radio Buttons */
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.radio-group div {
+    display: flex;
+    align-items: center;
+}
+
+.radio-group input[type="radio"] {
+    width: auto;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+.radio-group label {
+    margin: 0;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+/* Checkboxes */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.checkbox-group div {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+.checkbox-group label {
+    margin: 0;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+/* Buttons */
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.button-group button {
+    flex: 1;
     padding: 0.75rem;
-    background: #0066ff;
-    color: white;
     border: none;
     border-radius: 4px;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
 }
 
-.contact-container button:hover {
+.btn-submit {
+    background: #0066ff;
+    color: white;
+}
+
+.btn-submit:hover {
     background: #0052cc;
+}
+
+.btn-reset {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-reset:hover {
+    background: #c82333;
 }
 
 /* ===== FOOTER ===== */
