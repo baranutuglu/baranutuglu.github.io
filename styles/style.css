@@ -141,6 +141,72 @@ body {
     margin-bottom: 1.5rem;
 }
 
+/* ===== İLETİŞİM FORMU (Box Model) ===== */
+.contact-container {
+    max-width: 600px;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 2px solid #667eea;
+    border-radius: 8px;
+    background: #f5f5f5;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.contact-container h2 {
+    color: #667eea;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.8rem;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 0.5rem;
+}
+
+.contact-container label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.contact-container input,
+.contact-container select,
+.contact-container textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.contact-container input:focus,
+.contact-container select:focus,
+.contact-container textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+}
+
+.contact-container button {
+    width: 100%;
+    padding: 0.75rem;
+    background: #0066ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-container button:hover {
+    background: #0052cc;
+}
+
 /* ===== FOOTER ===== */
 .page-footer {
     background: rgba(0, 0, 0, 0.8);

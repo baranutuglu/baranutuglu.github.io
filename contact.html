@@ -41,6 +41,31 @@
                 <p><strong>⭐ Beni Takip Edin:</strong> LinkedIn ve GitHub'da beni takip etmek isterseniz, yeni projeleri buradan duyuruyorum!</p>
             </aside>
         </div>
+
+        <!-- İletişim Formu -->
+        <div class="contact-container">
+            <h2>İletişim Formu</h2>
+            <form>
+                <label for="name">Ad Soyadı</label>
+                <input type="text" id="name" name="name" placeholder="Adınız ve Soyadınız" required>
+                
+                <label for="email">E-posta Adresi</label>
+                <input type="email" id="email" name="email" placeholder="ornek@email.com" required>
+                
+                <label for="subject">Konu</label>
+                <select id="subject" name="subject" required>
+                    <option value="">Konu Seçiniz</option>
+                    <option value="business">İş Teklifi</option>
+                    <option value="question">Soru</option>
+                    <option value="feedback">Geri Bildirmi</option>
+                </select>
+                
+                <label for="message">Mesaj</label>
+                <textarea id="message" name="message" placeholder="Mesajınız..." rows="5" required></textarea>
+                
+                <button type="submit">Gönder</button>
+            </form>
+        </div>
     </main>
 
     <!-- Butonlar -->
