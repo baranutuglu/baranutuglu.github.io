@@ -187,6 +187,15 @@ body {
     box-sizing: border-box;
 }
 
+.contact-container input[type="file"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background: white;
+}
+
 .contact-container input[type="text"]:focus,
 .contact-container input[type="email"]:focus,
 .contact-container input[type="password"]:focus,
