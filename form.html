@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Başvuru Formu | CSS Temel Ödevi</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <!-- Header Alanı -->
+    <header class="page-header">
+        <h1>Başvuru Formu</h1>
+        <p>Beni daha yakından tanı ve başvuru yap</p>
+    </header>
+
+    <!-- Ana İçerik -->
+    <main class="main-container">
+        <!-- Yatay Menü (Sayfanın Ortasında) -->
+        <nav class="navbar navbar-centered">
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="about.html">Hakkında</a></li>
+                <li><a href="interests.html">Hizmetler</a></li>
+                <li><a href="contact.html">İletişim</a></li>
+                <li><a href="form.html">Başvuru Formu</a></li>
+            </ul>
+        </nav>
+
+        <!-- Detaylı İletişim Formu -->
+        <div class="contact-container">
+            <h2>Detaylı İletişim Formu</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">Ad Soyadı</label>
+                    <input type="text" id="name" name="name" placeholder="Örn: Asaf Karataş" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">E-posta Adresi</label>
+                    <input type="email" id="email" name="email" placeholder="ornek@mail.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Başvuru Takip Şifresi</label>
+                    <input type="password" id="password" name="password" placeholder="Şifrenizi girin" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>İletişim Tercihi:</label>
+                    <div class="radio-group">
+                        <div>
+                            <input type="radio" id="email-contact" name="contact-method" value="email" checked>
+                            <label for="email-contact">Bana e-posta ile ulaşın</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="phone-contact" name="contact-method" value="phone">
+                            <label for="phone-contact">Bana telefonla ulaşın</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>İlgi Alanları / Yetenekler:</label>
+                    <div class="checkbox-group">
+                        <div>
+                            <input type="checkbox" id="html" name="skills" value="html">
+                            <label for="html">HTML</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="css" name="skills" value="css">
+                            <label for="css">CSS</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="algorithm" name="skills" value="algorithm">
+                            <label for="algorithm">Algoritma</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Konu</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Lütfen bir konu seçin...</option>
+                        <option value="business">İş Teklifi</option>
+                        <option value="question">Soru</option>
+                        <option value="feedback">Geri Bildirimi</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="cv">Özgeçmiş (CV) veya Fotoğraf Yükle:</label>
+                    <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx,image/*">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Mesajınız:</label>
+                    <textarea id="message" name="message" placeholder="Detaylı mesajınız..." rows="5"></textarea>
+                </div>
+                
+                <div class="button-group">
+                    <button type="submit" class="btn-submit">Gönder</button>
+                    <button type="reset" class="btn-reset">Temizle</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Butonlar -->
+    <div style="text-align: center; padding: 2rem;">
+        <a href="index.html" class="btn">Ana Sayfaya Geri Dön</a>
+        <a href="contact.html" class="btn btn-secondary">İletişim</a>
+    </div>
+
+    <!-- Footer Alanı -->
+    <footer class="page-footer">
+        <p>&copy; 2026 CSS Temel Örnek. Bu sayfa basit bir HTML+CSS alıştırması olarak hazırlanmıştır.</p>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
