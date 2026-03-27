@@ -2,52 +2,82 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>CSS Temel Ödevi</title>
+    <title>Flexbox Lab Uygulaması</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <!-- Yatay Menü - ul > li > a yapısıyla -->
-    <nav class="navbar">
-        <ul>
-            <li><a href="index.html">Ana Sayfa</a></li>
-            <li><a href="about.html">Hakkında</a></li>
-            <li><a href="interests.html">Hizmetler</a></li>
-            <li><a href="contact.html">İletişim</a></li>
-            <li><a href="form.html">Başvuru Formu</a></li>
-        </ul>
-    </nav>
-
-    <!-- Header Alanı -->
-    <header class="page-header">
-        <h1>CSS Temel Ödevi</h1>
-        <p>Verilen görsele benzer şekilde basit bir web sayfası oluştururken CSS'in temel özelliklerini uygulama.</p>
-    </header>
-
-    <!-- Ana İçerik - İki Sütunlu Yapı -->
-    <main class="main-container">
-        <div class="content-wrapper">
-            <!-- Sol Sütun - İçerik -->
-            <div class="content">
-                <h2>👋 Hoş Geldiniz</h2>
-                <p>Merhaba! Ben Ziya Baran Utuğlu, Marmara Üniversitesi Bilgisayar Mühendisliği bölümünde eğitim gören bir yazılımcı ve web tasarımcısıyım. Modern web teknolojilerine tutku duyan ve her gün yeni şeyler öğrenmeye çalışan birisiyim.</p>
-                <p>Bu porfolio sitesi, CSS3 ve HTML5 kullanarak oluşturdum. Responsive tasarım, flexbox ve grid gibi modern CSS teknikleri deneme fırsatı buldum. Siz de sayfanın diğer bölümlerini keşfedip benimle iletişime geçebilirsiniz.</p>
+    <div class="wrapper">
+        <!-- 1) NAVBAR (Üst Menü) -->
+        <nav class="navbar">
+            <div class="logo">Logo</div>
+            <div class="nav-links">
+                <a href="#home">Ana Sayfa</a>
+                <a href="#about">Hakkında</a>
+                <a href="#services">Hizmetler</a>
+                <a href="#contact">İletişim</a>
             </div>
+        </nav>
 
-            <!-- Sağ Sütun - Yan Menü / Bilgi -->
-            <aside class="sidebar">
-                <h2>ℹ️ Hakkımda</h2>
-                <p><strong>Ad:</strong> Ziya Baran Utuğlu<br><strong>Yaş:</strong> 20<br><strong>Lokasyon:</strong> İstanbul, Türkiye<br><strong>E-Posta:</strong> brnutg@gmail.com</p>
-                <p>Yazılım geliştirme, web tasarımı ve teknoloji bana tutku veriyor. JavaScript, React ve modern web araçlarını kullanmayı seviyorum. Kod yazarken en çok zevk aldığım şey, insanlara faydalı ve güzel arayüzler yaratmaktır.</p>
-            </aside>
-        </div>
-    </main>
+        <!-- 2) HERO (İki Kolon) -->
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Hoş Geldiniz</h1>
+                <p>Flexbox kullanarak dinamik ve responsive web tasarımı yapabilirsiniz. Bu sayfada Flexbox'ın temel kavramları uygulanmaktadır.</p>
+                <button class="btn">Başla</button>
+            </div>
+            <div class="hero-image">
+                <div class="image-placeholder">Görsel Alanı</div>
+            </div>
+        </section>
 
-    <!-- Butonlar -->
-    <div style="text-align: center; padding: 2rem;">
-        <a href="form.html" class="btn" style="background: #667eea;">Başvuru Formu</a>
-        <a href="about.html" class="btn">Hakkımda Oku</a>
-        <a href="interests.html" class="btn btn-secondary">Hizmetleri Gör</a>
-        <a href="contact.html" class="btn">İletişime Geç</a>
+        <!-- 3) KARTLAR BÖLÜMÜ (Multiple Items) -->
+        <section class="cards-section">
+            <div class="card">
+                <h3>Kart 1</h3>
+                <p>Flexbox hakkında bilgi</p>
+            </div>
+            <div class="card">
+                <h3>Kart 2</h3>
+                <p>Flex container özellikleri</p>
+            </div>
+            <div class="card">
+                <h3>Kart 3</h3>
+                <p>Flex item özellikleri</p>
+            </div>
+            <div class="card">
+                <h3>Kart 4</h3>
+                <p>justify-content kullanımı</p>
+            </div>
+            <div class="card">
+                <h3>Kart 5</h3>
+                <p>align-items kullanımı</p>
+            </div>
+            <div class="card">
+                <h3>Kart 6</h3>
+                <p>flex-grow özellikleri</p>
+            </div>
+        </section>
+
+        <!-- 4) FLEX GROW UYGULAMA (Recap) -->
+        <section class="flex-grow-section">
+            <div class="grow-box box-1">
+                <p>flex-grow: 1</p>
+            </div>
+            <div class="grow-box box-2">
+                <p>flex-grow: 2</p>
+            </div>
+            <div class="grow-box box-3">
+                <p>flex-grow: 1</p>
+            </div>
+        </section>
+
+        <!-- 5) FOOTER -->
+        <footer class="footer">
+            <p>&copy; 2026 Flexbox Lab Uygulaması | Tüm Hakları Saklıdır</p>
+        </footer>
+    </div>
+</body>
+</html>
     </div>
 
     <!-- Footer Alanı -->
