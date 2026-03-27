@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Örneği - Detaylı Gösterim</title>
+    <link rel="stylesheet" href="styles/flexbox-example.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- NAVBAR -->
+        <nav class="navbar">
+            <div class="logo">LOGO</div>
+            <div class="nav-links">
+                <a href="index.html">Ana Sayfa</a>
+                <a href="about.html">Hakkında</a>
+                <a href="interests.html">Dersler</a>
+                <a href="contact.html">İletişim</a>
+            </div>
+        </nav>
+
+        <!-- PROPERTIES BUTTONS -->
+        <div class="properties-buttons">
+            <span class="prop-btn">flex layout</span>
+            <span class="prop-btn">justify-content</span>
+            <span class="prop-btn">flex layout</span>
+            <span class="prop-btn">50vh height</span>
+            <span class="prop-btn">100w height</span>
+            <span class="prop-btn">100w width</span>
+        </div>
+
+        <!-- SECTION 1: HERO SECTION -->
+        <section class="section hero-section">
+            <div class="section-title">Hero Başlık</div>
+            <div class="hero-container">
+                <div class="hero-text">
+                    <p>Açıklama metni</p>
+                    <button class="btn">Buton</button>
+                    <div class="section-info">
+                        <span class="info-label">flex-direction: row, row;</span>
+                        <span class="info-label">height: 30vh;</span>
+                        <span class="info-label">align-items: stretch</span>
+                    </div>
+                </div>
+                <div class="hero-image-placeholder">
+                    <div class="placeholder-icon"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: CARDS SECTION -->
+        <section class="section cards-section">
+            <div class="section-header">
+                <div class="section-title">Kartlar Bölümü</div>
+                <div class="section-tags">
+                    <span class="tag">multiple items</span>
+                    <span class="tag">flex layout + wrap</span>
+                </div>
+            </div>
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-title">Kart Başlığı</div>
+                    <p class="card-text">Kısa açıklama</p>
+                    <button class="btn btn-small">Buton</button>
+                </div>
+                <div class="card">
+                    <div class="card-title">Kart Başlığı</div>
+                    <p class="card-text">Kısa açıklama</p>
+                    <button class="btn btn-small">Buton</button>
+                </div>
+                <div class="card">
+                    <div class="card-title">Kart Başlığı</div>
+                    <p class="card-text">Kısa açıklama</p>
+                    <button class="btn btn-small">Buton</button>
+                </div>
+                <div class="card">
+                    <div class="card-title">Kart Başlığı</div>
+                    <p class="card-text">Kısa açıklama</p>
+                    <button class="btn btn-small">Buton</button>
+                </div>
+            </div>
+            <div class="section-info">
+                <span class="info-label">flex-direction</span>
+                <span class="info-label">flex layout + wrap</span>
+                <span class="info-label">gap + align/hizalama</span>
+                <span class="info-label">height: 30vh</span>
+            </div>
+        </section>
+
+        <!-- SECTION 3: FLEX GROW EXAMPLE 1 -->
+        <section class="section flex-grow-section">
+            <div class="section-title">Flex Grow Uygulaması</div>
+            <div class="flex-grow-tags">
+                <span class="tag">flex-grow:</span>
+                <span class="tag">height: 20vh</span>
+                <span class="tag">stretch (esneme)</span>
+            </div>
+            <div class="grow-container">
+                <div class="grow-box grow-1">
+                    <div class="grow-label">1 Kutu</div>
+                    <div class="grow-value">flex-grow: 1;</div>
+                    <button class="btn btn-grow">Buton</button>
+                </div>
+                <div class="grow-box grow-2">
+                    <div class="grow-label">2 Kutu</div>
+                    <div class="grow-value">flex-grow: 2;</div>
+                    <button class="btn btn-grow">Buton</button>
+                </div>
+                <div class="grow-box grow-3">
+                    <div class="grow-label">3 Kutu</div>
+                    <div class="grow-value">flex-grow: 1;</div>
+                    <button class="btn btn-grow">Buton</button>
+                </div>
+            </div>
+            <div class="section-info">
+                <span class="info-label">multiple items</span>
+                <span class="info-label">flex layout + wrap</span>
+                <span class="info-label">gap + align/hizalama</span>
+            </div>
+        </section>
+
+        <!-- SECTION 4: FLEX GROW EXAMPLE 2 -->
+        <section class="section flex-grow-section-2">
+            <div class="section-title">Flex Grow Uygulaması</div>
+            <div class="flex-grow-tags">
+                <span class="tag">flex-grow:</span>
+                <span class="tag">height: 20vh</span>
+                <span class="tag">stretch (esneme)</span>
+            </div>
+            <div class="grow-container-2">
+                <div class="grow-box-2 grow-1-2">
+                    <div class="grow-label-2">1 Kutu</div>
+                    <div class="grow-value-2">flex-grow: 1;</div>
+                </div>
+                <div class="grow-box-2 grow-2-2">
+                    <div class="grow-label-2">2 Kutu</div>
+                    <div class="grow-value-2">flex-grow: 2;</div>
+                </div>
+                <div class="grow-box-2 grow-3-2">
+                    <div class="grow-label-2">3 Kutu</div>
+                    <div class="grow-value-2">flex-grow: 1;</div>
+                </div>
+            </div>
+            <div class="section-info">
+                <span class="info-label">flex-grow</span>
+                <span class="info-label">height: 20vh</span>
+                <span class="info-label">stretch (esneme)</span>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <p>&copy; 2026 - Ternel Flexbox Örneği</p>
+        </footer>
+    </div>
+</body>
+</html>
