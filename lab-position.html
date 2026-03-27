@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Position Lab - Etkileşimli Duyuru Kartı</title>
+    <style>
+        /* ===== GENEL STİLLER ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+        }
+
+        body {
+            padding: 20px;
+        }
+
+        /* ===== BAŞLIK ALANI ===== */
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        /* ===== SABİT YARDIMCI ELEMENT (position: fixed) ===== */
+        .floating-help {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            z-index: 1000;
+        }
+
+        .floating-help:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(102, 126, 234, 0.6);
+        }
+
+        .floating-help:active {
+            transform: scale(0.95);
+        }
+
+        /* ===== ANA KAPSAYICI (position: relative) ===== */
+        .announcement-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .announcement-container:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ===== ARKA PLAN DEKORASYON ===== */
+        .card-background {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-background::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        /* ===== ROZET / EKİT ELEMENTLER (position: absolute) ===== */
+        .badge {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            border-radius: 50%;
+        }
+
+        /* Badge 1 - Sağ üst köşe (ABSOLUTE) */
+        .badge-featured {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 80px;
+            height: 80px;
+            background: #ff6b6b;
+            color: white;
+            z-index: 10;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .badge-featured:hover {
+            transform: rotate(15deg) scale(1.1);
+            cursor: pointer;
+        }
+
+        .badge-featured span {
+            text-align: center;
+            font-size: 0.7rem;
+            line-height: 1.2;
+        }
+
+        /* Badge 2 - Sol altı (ABSOLUTE) */
+        .badge-new {
+            position: absolute;
+            bottom: 120px;
+            left: -30px;
+            width: 70px;
+            height: 70px;
+            background: #51cf66;
+            color: white;
+            z-index: 8;
+            box-shadow: 0 4px 15px rgba(81, 207, 102, 0.4);
+            transform: rotate(-45deg);
+        }
+
+        .badge-new:hover {
+            transform: rotate(-45deg) scale(1.15);
+            cursor: pointer;
+        }
+
+        .badge-new span {
+            transform: rotate(45deg);
+            display: block;
+        }
+
+        /* Badge 3 - Sağ altı (ABSOLUTE) */
+        .badge-limited {
+            position: absolute;
+            bottom: 150px;
+            right: -25px;
+            width: 75px;
+            height: 75px;
+            background: #ffd43b;
+            color: #333;
+            z-index: 9;
+            box-shadow: 0 4px 15px rgba(255, 212, 59, 0.4);
+            transform: rotate(20deg);
+        }
+
+        .badge-limited:hover {
+            transform: rotate(20deg) scale(1.12);
+            cursor: pointer;
+        }
+
+        .badge-limited span {
+            transform: rotate(-20deg);
+            display: block;
+            font-size: 0.65rem;
+            text-align: center;
+            line-height: 1.1;
+        }
+
+        /* ===== KART İÇERİK ALANI ===== */
+        .card-content {
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .card-content h2 {
+            font-size: 2rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+            animation: slideDown 0.6s ease;
+        }
+
+        .card-content p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            animation: fadeIn 0.8s ease;
+        }
+
+        /* ===== BİLGİ ETIKETLERI ALANI ===== */
+        .info-tags {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .info-tag {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            background: #f0f2ff;
+            color: #667eea;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid #667eea;
+        }
+
+        .info-tag:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .info-tag:active {
+            transform: translateY(-1px);
+        }
+
+        /* ===== EYLEM DÜĞMELERI ===== */
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            padding-bottom: 1rem;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 0.9rem 2rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-primary:active {
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary:active {
+            transform: translateY(-1px);
+        }
+
+        /* ===== ALT BİLGİ ALANI ===== */
+        .footer-section {
+            background: #f8f9fa;
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+            margin-top: 3rem;
+        }
+
+        .footer-section p {
+            color: #666;
+            margin: 0.5rem 0;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.7rem 1.5rem;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: #764ba2;
+            transform: translateX(-3px);
+        }
+
+        /* ===== ANIMASYONLAR ===== */
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        .badge-featured span {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 600px) {
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .card-content {
+                padding: 2rem 1.5rem;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+            }
+
+            .floating-help {
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- BAŞLIK ALANI -->
+    <div class="page-header">
+        <h1>Üniversite Yılbaşı Gala Duyurusu</h1>
+        <p>CSS Position Laboratuvarı - Etkileşimli Duyuru Kartı</p>
+    </div>
+
+    <!-- ANA DUYURU KARTI (position: relative KAPSAYICI) -->
+    <div class="announcement-container">
+        <!-- ARKA PLAN -->
+        <div class="card-background"></div>
+
+        <!-- ROZET ELEMENTLERI (ABSOLUTE POZİSYONLANDIRMA) -->
+        <!-- Badge 1: Özel Teklif -->
+        <div class="badge badge-featured">
+            <span>ÖZEL<br>TEKLİF</span>
+        </div>
+
+        <!-- Badge 2: Yeni -->
+        <div class="badge badge-new">
+            <span>YENİ</span>
+        </div>
+
+        <!-- Badge 3: Sınırlı Sayıda -->
+        <div class="badge badge-limited">
+            <span>SINIRLI<br>SAYIDA</span>
+        </div>
+
+        <!-- KART İÇERİĞİ -->
+        <div class="card-content">
+            <h2>Kampüs Yılbaşı Gala Etkinliği</h2>
+            <p>
+                2026 Yılbaşı Gala Etkinliğine davetliyiz! Kampüsün en büyük sosyal etkinliğinde bize katılın. 
+                Canlı müzik, gourmet yemekler, ve arkadaş bulmak için harika bir ortam sizi bekliyor.
+            </p>
+
+            <!-- BİLGİ EKİTLERİ (ETKİLEŞİMLİ ALANLAR) -->
+            <div class="info-tags">
+                <span class="info-tag">📅 15 Ocak 2026</span>
+                <span class="info-tag">⏰ Saat 20:00</span>
+                <span class="info-tag">📍 Kampüs Ballı Salonu</span>
+            </div>
+
+            <!-- EYLEM DÜĞMELERI (ETKİLEŞİMLİ ALANLAR) -->
+            <div class="action-buttons">
+                <button class="btn-primary">Bilet Satın Al</button>
+                <button class="btn-secondary">Daha Fazla Bilgi</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SABİT YARDIMCI ELEMENT (position: fixed) -->
+    <div class="floating-help">
+        <span title="Yardım: Sayfayı scroll et">?</span>
+    </div>
+
+    <!-- ALT BİLGİ / FOOTER ALANI -->
+    <div class="footer-section">
+        <p><strong>DÜZENLEYİCİ:</strong> Üniversite Sosyal Aktiviteler Kulübü</p>
+        <p><strong>KAPASITESI:</strong> 500 Kişi | <strong>FİYAT:</strong> 25 TL (Öğrenci)</p>
+        <p>Biletler sınırlı sayıdadır. Erken satın alanlara özel indirim uygulanmaktadır.</p>
+        <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+    </div>
+
+</body>
+</html>
