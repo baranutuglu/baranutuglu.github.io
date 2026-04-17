@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Uygulamalar - Not Hesaplama ve Birim Dönüştürücü</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/apps.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Uygulamalar</h1>
+
+    <section class="card">
+      <h2>Öğrenci Not Hesaplama</h2>
+      <form id="gradeForm">
+        <label>Ad Soyad
+          <input type="text" id="studentName" placeholder="Ad Soyad" required>
+        </label>
+        <label>Vize (40%)
+          <input type="number" id="midterm" min="0" max="100" placeholder="Vize notu" required>
+        </label>
+        <label>Final (60%)
+          <input type="number" id="final" min="0" max="100" placeholder="Final notu" required>
+        </label>
+        <button type="submit" class="btn">Hesapla</button>
+      </form>
+
+      <div id="gradeResult" class="resultBox hidden"></div>
+    </section>
+
+    <section class="two-columns">
+      <div class="card">
+        <h2>Birim Dönüştürücü</h2>
+        <form id="convForm">
+          <label>Değer Giriniz:
+            <input type="number" id="valueIn" step="any" placeholder="Örn: 50" required>
+          </label>
+          <label>Dönüşüm Tipi:
+            <select id="convType">
+              <option value="m_to_km">Metre -> Kilometre</option>
+              <option value="c_to_f">Celsius -> Fahrenheit</option>
+              <option value="kg_to_g">Kilogram -> Gram</option>
+            </select>
+          </label>
+          <button type="submit" class="btn primary">Hesapla</button>
+        </form>
+        <div id="convResult" class="resultBox hidden"></div>
+      </div>
+
+      <div class="card">
+        <h2>Kısa Açıklama</h2>
+        <p>Bu sayfada iki uygulama bulunur:</p>
+        <ul>
+          <li>Not Hesaplama: Vize %40, Final %60 hesaplanır. Ortalama &gt;= 50 ise 'Geçti'.</li>
+          <li>Birim Dönüştürücü: Metre/Kilometre, Celsius/Fahrenheit, Kilogram/Gram dönüşümleri.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="scripts/apps.js"></script>
+</body>
+</html>
